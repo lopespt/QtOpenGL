@@ -3,13 +3,13 @@
 #include <QApplication>
 #include <qglwidget>
 #include <QLabel>
-
+#include "MainWidget.h"
 
 int main( int argc, char * argv[] )
 {
     QApplication app(argc, argv);
-    QGLWidget l;
-    l.setVisible(true);
+    MainWidget *main = new MainWidget();
+    main->setVisible(true);
 
 
     return app.exec();

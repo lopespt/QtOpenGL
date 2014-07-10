@@ -9,7 +9,7 @@ clean:
 	rm -fr QtMakefile QtMakefile.debug QtMakefile.release debug release
 
 createPro:
-	$(QMAKE) -project "QT+=core gui widgets sql network opengl" "CONFIG += console" 
+	$(QMAKE) -project "QT+=core gui widgets sql network opengl" "CONFIG += console" "LIBS += -framework GLUT"
 
 QtMakefile: createPro
 	$(QMAKE) -o QtMakefile $(PRO) CONFIG+=debug_and_release
