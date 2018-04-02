@@ -8,34 +8,33 @@
 #ifndef MAINWIDGET_H_
 #define MAINWIDGET_H_
 
-#include <QGlWidget>
-#include <QWidget>
-#include <opengl/glu.h>
-#include <glut/glut.h>
-#include <math.h>
+#include <GL/glu.h>
+#include <GL/glut.h>
 #include <QTimer>
+#include <QWidget>
+#include <QtOpenGL>
+#include <math.h>
 
-class MainWidget: public QGLWidget {
-	Q_OBJECT
+class MainWidget : public QGLWidget {
+  Q_OBJECT
 public:
-	MainWidget(QWidget *parent = NULL);
-	void initializeGL();
-	void paintGL();
+  MainWidget(QWidget *parent = NULL);
+  void initializeGL();
+  void paintGL();
 
-	virtual ~MainWidget();
+  virtual ~MainWidget();
+
 private:
+  QTimer timer;
 
-	QTimer timer;
+  void drawGrid();
+  void drawCube();
+  void drawFunction();
+  void resizeGL(int w, int h);
+  void drawAxis();
 
-	void drawGrid();
-	void drawCube();
-	void drawFunction();
-	void resizeGL(int w, int h);
-	void drawAxis();
-
-	void drawCube(GLfloat x, GLfloat y, GLfloat z, GLfloat dx, GLfloat dy,
-			GLfloat dz);
-
+  void drawCube(GLfloat x, GLfloat y, GLfloat z, GLfloat dx, GLfloat dy,
+                GLfloat dz);
 };
 
 #endif /* MAINWIDGET_H_ */

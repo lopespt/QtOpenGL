@@ -1,16 +1,13 @@
-
 #include "DateTime.h"
-#include <QApplication>
-#include <qglwidget>
-#include <QLabel>
 #include "MainWidget.h"
+#include <QApplication>
+#include <QLabel>
+#include <QtOpenGL>
 
-int main( int argc, char * argv[] )
-{
-    QApplication app(argc, argv);
-    MainWidget *main = new MainWidget();
-    main->setVisible(true);
+int main(int argc, char *argv[]) {
+  QApplication app(argc, argv);
+  MainWidget *main = new MainWidget();
+  main->setVisible(true);
 
-
-    return app.exec();
+  return app.exec();
 }
